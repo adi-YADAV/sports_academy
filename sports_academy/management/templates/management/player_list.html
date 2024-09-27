@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player List</title>
+    <link rel="stylesheet" href="{% static 'management/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Players List</h2>
+        <ul>
+            {% for player in players %}
+                <li>
+                    {{ player.first_name }} {{ player.last_name }} - {{ player.team }}
+                    <a href="{% url 'update_player' player.id %}">Update</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
